@@ -1,0 +1,294 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;400;700&display=swap');
+
+*{
+    box-sizing: border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    background-color: rgba(17,49,78,1);
+    background-repeat: no-repeat;
+    background-size:cover;
+    overflow:hidden;
+    height: 100vh;
+    font-family: 'Poppins', sans-serif;
+}
+
+.container{
+    padding: 20px 70px;
+    color:#fff;
+}
+
+.current-info{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.date-container{
+    font-weight: 100;
+}
+.date-container .time{
+    font-size: 70px;
+}
+
+.date-container #am-pm{
+    font-size: 30px;
+    margin-left: 20px;
+}
+
+.date-container .date{
+    font-size: 30px;
+}
+
+.place-container{
+    position: absolute;
+    top: 18px;
+    right: 26px;
+    text-align: end;
+}
+#input{
+    font-size: 18px;
+    padding: 5px 10px;
+    outline: none;
+    border: none;
+    border-radius: 15px;
+    background: aliceblue;
+}
+
+#search{
+    background: none;
+    padding: 5px 20px;
+    color: aliceblue;
+    outline: none;
+    background: rgba(0,0,0,0.2);
+
+    font-size: 17px;
+    border-radius: 15px;
+    cursor: pointer;
+    border: 1px solid white;
+}
+
+.place-container .time-zone{
+    font-size: 30px;
+    font-weight: 100;
+}
+
+.place-container .country{
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.current-info .others{
+    
+    position: absolute;
+    top: 100%;
+    left: 30%;
+
+    
+    
+    display: grid; /* Add this property to make it a grid container */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    background: rgba(33,67,99,255);
+    padding:20px;
+    border-radius: 10px;
+    margin: 10px 0;
+    border: 1px solid #eee;
+}
+
+.others {  
+
+  display: grid;
+  grid-template-areas:
+    '. city city city city city'
+    'imgweather temperature temperature . details details '
+    'imgweather temperature temperature . feel feel '
+    'AirQuality Wind Humidity Visibility Pressure DewPoint';
+    
+  gap: 10px;
+  background-color: #2196F3;
+  padding: 10px;
+  
+}
+
+.city { grid-area: city; }
+.imgweather { grid-area: imgweather; }
+.temperature { grid-area: temperature; font-size: 51px; }
+.details { grid-area: details; }
+.feel { grid-area: feel; }
+.explain { grid-area: explain; }
+.AirQuality { grid-area: AirQuality; }
+.Wind { grid-area: Wind; }
+.Humidity { grid-area: Humidity; }
+.Visibility { grid-area: Visibility; }
+.Pressure { grid-area: Pressure; }
+.DewPoint { grid-area: DewPoint; }
+
+
+.future-forecast{
+    background: rgba(24,24,27,0.8);
+    padding: 25px;
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    color:white;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    overflow-y: hidden;
+}
+
+.future-forecast .today{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    padding:15px;
+    padding-right: 40px;
+    border-radius: 10px;
+    background: rgba(0,0,0,0.2)
+}
+
+.future-forecast .today .day{
+    padding: 5px 15px;
+    background: #009064;
+    border-radius: 50px;
+    text-align: center;
+}
+
+.future-forecast .today .temp{
+    font-size: 18px;
+    padding-top: 15px;
+}
+
+.future-forecast .weather-forecast{
+    display: flex;
+}
+
+.weather-forecast .weather-forecast-item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 10px;
+    border: 1px solid #eee;
+    padding: 15px;
+    border-radius: 10px;
+    background: rgba(0,0,0,0.2)
+}
+
+.weather-forecast .weather-forecast-item .day{
+    padding: 5px 15px;
+    background: #3C3C;
+    border-radius: 50px;
+    text-align: center;
+}
+
+.weather-forecast .weather-forecast-item .temp{
+    font-weight: 200;
+    font-size: 15px;
+}
+
+
+@media only screen and  (max-width:730px){
+    
+    .container{
+        padding: 20px;
+        
+
+    }
+    
+    .future-forecast{
+        justify-content: start;
+        align-items: none;
+        overflow-y: scroll;
+    }
+
+    .future-forecast .today .temp{
+        font-size: 16px;
+    }
+
+    .date-container .time{
+        font-size: 50px;
+    }
+
+    .date-container #am-pm{
+        font-size: 20px;
+    }
+
+    .date-container .date{
+        font-size: 20px;
+    }
+
+    .place-container{
+        text-align: end;
+        margin-top: 15px;
+    }
+    .place-container .place{
+        position: absolute;
+        top: 130px;
+        right: 0px;
+    }
+    #search{
+        font-size: 12px;
+        padding: 7px 10px;
+        outline: none;
+        border: none;
+        border-radius: 10px;
+        background: rgb(0, 0, 0);
+    }
+    .place-container .time-zone{
+        font-size: 20px;
+    }
+
+    .current-info .others{
+ 
+        padding: 12px;
+    }
+
+    .current-info .others .weather-item{
+        font-size: 14px;
+    }
+    .current-info .others{
+        position: relative;
+        top: 90px; 
+        left: 0%;
+        
+        display: grid; /* Add this property to make it a grid container */
+        justify-content: center; /* Center horizontally */
+        align-items: center; /* Center vertically */
+        background: rgba(33,67,99,255);
+        padding:20px;
+        border-radius: 10px;
+        margin: 10px 0;
+        border: 1px solid #eee;
+    }
+    .temperature { grid-area: temperature; font-size: 30px; }
+    .others {  
+
+        display: grid;
+        grid-template-areas:
+          'city city city city city city'
+          'imgweather temperature details details details details '
+          'imgweather temperature feel feel feel feel '
+          'AirQuality AirQuality Wind wind Humidity Humidity'
+          ' Visibility Visibility Pressure Pressure DewPoint DewPoint';
+          
+        gap: 10px;
+        background-color: #2196F3;
+        padding: 10px;
+        
+      }
+      
+}
+
+@media only screen and (max-width: 1400px){
+    .future-forecast{
+        justify-content: start;
+        align-items: none;
+        overflow-x: scroll;
+    }
+}
